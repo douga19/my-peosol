@@ -1,0 +1,235 @@
+<html lang="fr">
+<head>
+	<title>Peosol | Assistance Intelligente</title>
+    <meta charset="utf-8">
+    
+    <!-- IMPORT ASSETS -->
+    <link rel="shortcut icon" href="assets/img/picto.ico">
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script type="text/javascript" src="assets/js/jquery.js"></script>
+    <script type="text/javascript" src="assets/bootstrap/js/bootstrap.js"></script>
+
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400' rel='stylesheet' type='text/css'>
+    
+    <script type="text/javascript">
+    	$(function(){
+	    	// au clic sur un lien
+	    	$('a').on('click', function(evt){
+		       	// bloquer le comportement par défaut: on ne rechargera pas la page
+		       	evt.preventDefault(); 
+		       	// enregistre la valeur de l'attribut  href dans la variable target
+			var target = $(this).attr('href');
+		       	/* le sélecteur $(html, body) permet de corriger un bug sur chrome 
+		       	et safari (webkit) */
+			$('html, body')
+		       	// on arrête toutes les animations en cours 
+		     	  .stop()
+		     	  /* on fait maintenant l'animation vers le haut (scrollTop) vers 
+		        	notre ancre target */
+		       	.animate({scrollTop: $(target).offset().top}, 1000 );
+	   		});
+
+	   		/*manova ny active*/
+
+	   		$(".li").on("click", function (){
+	   			setActive($(this));
+	   		});
+
+	   		$(".readmore-1").on("click", function(){
+	   			setActive($("#nav-about"));
+	   		});
+
+	   		$(".readmore-2").on("click", function(){
+	   			setActive($("#nav-contact"));
+	   		});
+
+	   		function setActive(target){
+	   			if(target.attr("class") == "li"){
+	   				var oldActive = $("[class='active li']");
+	   				oldActive.attr("class", "li");
+	   				target.attr("class", "active li");
+	   			}
+	   		}
+
+	   		//form
+	   		$("#send").hide();
+	   		$("#error").hide();
+
+		});
+    </script>
+
+</head>
+<body>
+	<div  class="container-fluid">
+
+	<!-- navbar -->
+	<nav id="nav" class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+		    <div class="navbar-header">
+		     	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+		      	</button>
+		    	<a class="navbar-brand" href="#home">
+		    		<img src="assets/img/logo.png" alt="logo" title="Assistance Intelligente">
+		    	</a>
+		    </div>
+
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      <ul class="nav navbar-nav navbar-right">
+		        <li class="active li" id="nav-home"><a href="#home">Home</a></li>
+		        <li class="li" id="nav-about"><a href="#about">Qui sommes-nous</a></li>
+				<li class="li" id="nav-service"><a href="#service">Services</a></li>
+		        <li class="li" id="nav-contact"><a href="#contact">Contactez-nous</a></li>
+		      </ul>
+		    </div>
+		</div>
+	</nav>
+
+	<!-- home -->
+	<div id="home" class="row pad-section">
+		<div class="row">
+			<h1>Peosol</h1>
+			<small>Assistance Intelligente</small>
+		</div>
+		<div class="row btn-wrapper">
+			<a href="#about"><div class="readmore readmore-1">Qui sommes nous?</div></a>
+			<a href="#contact"><div class="readmore readmore-2">Nous contacter</div></a>
+		</div>
+		<div class="fixe">
+			<img src="assets/img/desktop.png">
+		</div>
+	</div>
+
+	<!-- about -->
+	<div id="about" class="row pad-section">
+		<h1>Qui sommes-nous?</h1>
+		<p class="text col-md-4 col-md-offset-2">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+		</p>
+		<p class="text col-md-4 ">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+		</p>
+		<div class="fixe">
+			<img src="assets/img/about.png">
+		</div>
+	</div>
+
+	<!-- service -->
+	<div id="service" class="row pad-section">
+		<h1>Nos services</h1>
+		<p class="text">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+		</p>
+		<div class="service-wrapper">
+			<div class="col-md-4 service">
+				<h2>Community Management</h2>
+				<img src="assets/img/responsive.png" alt="responsive" title="Community Management">
+				<p class="text">
+					Lorem ipsum dolor sit amet, consectetur <strong>adipiscing elit</strong>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+				</p>
+
+			</div>
+			<div class="col-md-4 service">
+				<h2>Rédaction Web</h2>
+				<img src="assets/img/pixelperfect.png" alt="pixelperfect" title="Rédaction Web">
+				<p class="text">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor <strong>incididunt ut labore</strong> et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut <strong>aliquip</strong> ex ea commodo consequat. 
+				</p>
+
+			</div>
+			<div class="col-md-4 service">
+				<h2>Intégration Web</h2>
+				<img src="assets/img/bootstrap.png" alt="bootstrap" title="Intégration Web">
+				<p class="text">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+				</p>
+			</div>	
+			<div class="fixe">
+				<img src="assets/img/service.png">
+			</div>		
+		</div>
+	</div>
+
+	<!-- contact -->
+	<div id="contact" class="row pad-section">
+		<div class="row">
+			<div class="contact-col col-md-4 col-md-offset-2">
+				<h3>Contactez-nous</h3>
+				<ul>
+	                <li class="adress"><img src="assets/img/marker.png" alt="marker image">Lot Adresse, 5è Etage Analakely</li>
+	                <li class="adress"><img src="assets/img/phone.png" alt="phone image">+261 33 56 123 45</li>
+	                <li class="adress"><img src="assets/img/email.png" alt="mail image"><a href="mailto:info@my-peosol.com" class="link">info@my-peosol.com</a></li>
+	                <li class="adress"><img src="assets/img/browser.png" alt="magnifier image"><a href="#" class="link">www.my-peosol.com</a></li>                                    
+	            </ul>
+			</div>
+			<div class="contact-col col-md-4">
+				<h3>Envoyez-nous un message</h3>
+				<div class="" id="data-form">
+				  	<div class="form-group form-inline">
+					    <input type="text" class="form-control" id="nom" name="nom" placeholder="Votre nom ou votre société" required="required">
+					    <input type="email" class="form-control" id="email" name="email" placeholder="Votre email" required="required">
+				  	</div>
+				  	<div class="form-group">
+				  		<textarea class="form-control" rows="5" name="message" id="message"></textarea>
+				  	</div>
+				  	<button class="btn btn-default col-md-6 col-md-offset-6" id="submit">Envoyer un message</button>
+				  	<span class="label label-success col-md-4 col-md-offset-8" id="send">Message envoyé</span>
+				  	<span class="label label-danger col-md-6 col-md-offset-6" id="error">Une erreur s'est produite</span>
+				</div>
+			</div>
+		</div>	
+	</div>
+
+	<a href="#home" title="Revenir en haut de la page"><div class="back-top"><span class="glyphicon glyphicon-chevron-up"></span></div></a>
+
+	<!-- footer -->
+	<footer class="row pad-section">
+		<div class="col-md-4 col-md-offset-2 copy">
+				<p>&copy 2014 Peosol. All rights reserved. <a href="#" class="link"><span>Blog</span></a></small></p>
+		</div>
+		<div class="col-md-4 social">
+			<a href="http://www.facebook.com"><img src="assets/img/facebook.png"></a>
+			<a href="http://www.twitter.com"><img src="assets/img/twitter.png"></a>
+		</div>
+	</footer>
+
+	<script type="text/javascript">
+		$(function(){
+			function sent(){
+				$("#submit").hide();
+				$("#send").show();
+			}
+
+			function errorOccured(){
+				$("#submit").hide();
+				$("#error").show();
+				//location.reload();
+			}
+
+			$("#submit").on("click", function(){
+				var nom = $("#nom").val(),
+					email = $("#email").val(),
+					message = $("#message").val();
+
+
+				$.ajax({
+					type: "POST",
+					url: "php/insert-message.php",
+					data: "nom=" + nom + "&email=" + email + "&message=" +message,
+					success: function(msg){
+						if(msg == "1") sent();
+						else errorOccured();	
+					},
+					error: function(){
+						errorOccured();
+					}
+				});
+			});
+		});
+	</script>
+</body>
+</html>
